@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SouthAfricanNumberCode</string>
+    <string name="hint_id">Please Enter ID Number</string>
+    <string name="submit">Submit</string>
+    <string name="dob">\"Date Of Birth \"</string>
+    <string name="sgender">Gender</string>
+    <string name="snationality">Nationality</string>
+    <string name="newline">\n</string>
+</resources>
