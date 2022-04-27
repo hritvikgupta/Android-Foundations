@@ -4,11 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="25dp"
-    android:background="@color/white"
+    android:layout_marginTop="0dp"
+    android:background="@color/colorLight"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="327dp"
+        android:layout_height="210dp"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        app:srcCompat="@drawable/img" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,9 +51,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/cardview_light_background"
         android:text="@string/calculate_temprature"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorLight" />
 
     <TextView
         android:id="@+id/tvide"
@@ -56,9 +66,4 @@
         android:text="TextView"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="341dp"
-        app:srcCompat="@drawable/img" />
 </LinearLayout>

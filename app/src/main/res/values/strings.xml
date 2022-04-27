@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cricketchirpstemprature</string>
+    <string name="app_name">Cricket chirps to Temperature Converter</string>
     <string name="number_of_chirps_in_25_seconds">Number of Chirps in 25 Seconds</string>
     <string name="calculate_temprature">Calculate Temprature</string>
     <string name="todo">TODO</string>
