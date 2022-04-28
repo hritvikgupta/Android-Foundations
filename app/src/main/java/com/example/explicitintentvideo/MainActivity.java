@@ -9,12 +9,42 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import android.app.Activity;
+
 
 public class MainActivity extends AppCompatActivity {
 
     EditText etName;
     Button btn1, btn2;
     TextView tvresults;
+    // final here we used to create a constant and all must be UPPER CASE letter
+    //3 is a constant we use it to identify activity3 when we are sending data from
+    // some activity to the main activity
+    final int ACTIVITY3 = 3;
+    ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == Activity.RESULT_OK )
+                    {
+                        // There are no request codes
+                        Intent data = result.getData();
+                        //Catching the data from the Activity3 using surname
+                        tvresults.setText(data.getStringExtra("surname"));
+
+                    }
+                    if(result.getResultCode() == Activity.RESULT_CANCELED)
+                    {
+                            tvresults.setText("No Data Received");
+                    }
+                }
+            });
+
 
 
 
@@ -45,6 +75,16 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
 
                 }
+
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, com.example.explicitintentvideo.Activity3.class);
+                //Start activity for the specific purpose
+                someActivityResultLauncher.launch(intent);
 
             }
         });
